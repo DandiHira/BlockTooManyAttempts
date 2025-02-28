@@ -1,6 +1,6 @@
 # BlockTooManyAttempts
 
-BlockTooManyAttempts is a Windows background service that monitors Windows Security Event Logs for failed login attempts and automatically blocks IP addresses that exceed a specified threshold of failed attempts. This helps to prevent brute force attacks and unauthorized access to your system. This program relies on searching English (United States) strings in EventViewer. Systems using different language packs will not work correctly with this program.
+BlockTooManyAttempts is a Windows background service that monitors Windows Security Event Logs for failed login attempts and automatically blocks IP addresses that exceed a specified threshold of failed attempts. This helps to prevent brute force attacks and unauthorized access to your system. This program relies on searching **English (United States)** strings in EventViewer. Systems using different language packs will not work correctly with this program.
 
 ## Features
 
