@@ -128,7 +128,7 @@ namespace BlockTooManyAttempts
 							_logger.LogInformation($"Blocked IP: {ip}");
 
 							ipAndAttemptCount.Remove(ip);
-							concatedBlockingIPs += ip.ToString() + ", ";
+							concatedBlockingIPs += ip.ToString() + ",";
 						}
 					}
 				}
