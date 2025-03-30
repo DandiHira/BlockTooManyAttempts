@@ -69,11 +69,11 @@ namespace BlockTooManyAttempts
 						continue;
 					}
 
-					concatedBlockingIPs += ipNetwork.BaseAddress.ToString() + ", ";
+					concatedBlockingIPs += ipNetwork.BaseAddress.ToString() + ",";
 				}
 			}
 
-			_logger.LogInformation($"Already Blocked IPs: {concatedBlockingIPs.TrimEnd(',', ' ')}");
+			_logger.LogInformation($"Already Blocked IPs: {concatedBlockingIPs.TrimEnd(',')}");
 
 		LB_LOOP:
 
@@ -135,12 +135,11 @@ namespace BlockTooManyAttempts
 
 				runNetshAdvfirewall($"delete rule name={Program.SERVICE_NAME}", false);
 
-				concatedBlockingIPs = concatedBlockingIPs.TrimEnd(',', ' ');
+				concatedBlockingIPs = concatedBlockingIPs.TrimEnd(',');
 				runNetshAdvfirewall($"add rule name={Program.SERVICE_NAME} dir=in action=block remoteip={concatedBlockingIPs} enable=yes profile=domain,private,public", false);
 
 				await Task.Delay(TimeSpan.FromMinutes(20), stoppingToken);
 			}
-
 		}
 	}
 }
